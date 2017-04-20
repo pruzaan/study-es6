@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Learning ECMAScript 6</title>
+    </head>
+    <body>
+        <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+        <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+        <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+        <script type="module">
+          var a = new Promise(function(resolve, reject){
+            var b = new Promise(function(res, rej){
+              rej("$$$ reject");
+            });
+            
+            resolve(b);
+          });
+
+          var c = new Promise(function(resolve, reject){
+            var d = new Promise(function(res, rej){
+              res("### resolve");
+            });
+            
+            resolve(d);
+          });
+        </script>
+    </body>
+</html>
